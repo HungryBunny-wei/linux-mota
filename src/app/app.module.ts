@@ -35,7 +35,7 @@ import {RuntimeControll} from "./modules/api/runtime-controll";
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
-  RuntimeControll
+  RuntimeControll,
 ];
 
 type StoreType = {

@@ -7,14 +7,13 @@ import {RuntimeControll} from "../api/runtime-controll";
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
-  @ViewChild('loginBackgroundImage') loginBackgroundImage: ElementRef;
+  @ViewChild('background_image') background_image: ElementRef;
 
-  login_background_image:string = this.RuntimeControll.HostConfig.loginImageSrc;
   constructor(public RuntimeControll:RuntimeControll) {
 
   }
 
-  setHomeImage() {
-    this.login_background_image = this.RuntimeControll.HostConfig.homeImageSrc;
+  setLoginImageSrc(){
+    this.RuntimeControll.setLoginImageSrc("/assets/resources/img/background-img.jpg");
   }
 }

@@ -1,7 +1,9 @@
-<div class="login_background_image" #loginBackgroundImage [lm-src]="login_background_image" lmType="backgroundImage"></div>
+<div class="background_image" #backgroundImage [lm-src]="this.RuntimeControll.HostState == 'login'?this.RuntimeControll.HostConfig.loginImageSrc:this.RuntimeControll.HostConfig.homeImageSrc" lmType="backgroundImage"></div>
 
 <div class="ant-layout-header">
-  <button nz-button="" (click)="setHomeImage()">换首桌面</button>
+  <button nz-button="" (click)="this.RuntimeControll.login()">换首页桌面</button>
+  <button nz-button="" (click)="this.RuntimeControll.outlog()">换登录桌面</button>
+  <button nz-button="" (click)="setLoginImageSrc()">设置默认登录背景位置</button>
 </div>
 <!--<nz-layout>-->
 <!--<nz-sider [nzWidth]="64"></nz-sider>-->

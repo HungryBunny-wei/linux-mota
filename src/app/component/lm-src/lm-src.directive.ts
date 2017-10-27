@@ -1,14 +1,16 @@
-import {Directive, ElementRef, Input, HostListener, OnInit, Renderer, Renderer2} from '@angular/core';
+import {Directive, ElementRef, Input, HostListener, OnInit, Renderer, Renderer2, OnChanges} from '@angular/core';
 
 export type LmSrcType = "backgroundImage" | "src";
 
 /**
- * 用于设置src的指令，没做安全处理，慎用
+ * 用于设置src的指令
+ * 可以对src做特殊处理
+ * 获取用来设置背景图片src
  */
 @Directive({
   selector: '[lm-src]'
 })
-export class LmSrcDirective implements OnInit {
+export class LmSrcDirective implements OnInit,OnChanges {
   //src，支持实时刷新
   @Input("lm-src") src: string;
 
@@ -34,9 +36,6 @@ export class LmSrcDirective implements OnInit {
       return;
     }
     if (changeMap.src) {
-      this.updateSrc();
-    }
-    if (changeMap.lmType) {
       this.updateSrc();
     }
   }
