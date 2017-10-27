@@ -3,8 +3,8 @@ import {Routes} from '@angular/router';
 export const ROUTES: Routes = [
   {
     path: '',
-    redirectTo: "login",
+    redirectTo: "/main",
     pathMatch: "full"
   },
-  {path: 'main', loadChildren: './main#MainModule'},
+  {path: 'main', loadChildren: './modules/main#MainModule'},
 ];

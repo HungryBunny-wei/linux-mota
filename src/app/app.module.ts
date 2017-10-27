@@ -28,13 +28,14 @@ import {AppComponent} from './app.component';
 import {APP_RESOLVER_PROVIDERS} from './app.resolver';
 import {AppState, InternalStateType} from './app.service';
 
-import '../styles/styles.scss';
-import '../styles/headings.css';
+
+import {RuntimeControll} from "./modules/api/runtime-controll";
 
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
+  RuntimeControll
 ];
 
 type StoreType = {
